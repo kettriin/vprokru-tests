@@ -8,6 +8,7 @@ import web.pages.MainPage;
 import web.pages.components.AddressModal;
 import web.pages.components.PromoModal;
 
+import static com.codeborne.selenide.Selenide.sleep;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("Тесты на взаимодействие с корзиной")
@@ -27,7 +28,7 @@ public class CartTests extends TestBase{
         cartPage.cartIsEmpty();
     }
 
-    @DisplayName("Добавленный товары отображаются в ненулевом количестве")
+    @DisplayName("Добавленный товар отображается в ненулевом количестве")
     @Test
     void cartHasAddedItemsTest() {
         addProductToCart();
@@ -61,6 +62,7 @@ public class CartTests extends TestBase{
         address.minAddressInput();
         address.approveAddress();
         mainPage.openCart();
+        sleep(3000);
         promo.closePromoModalIfPresent();
     }
 }

@@ -21,7 +21,7 @@ public class MainPage {
     private final SelenideElement catalogMenu = $(".FeatureCatalogNavigationDesktop_parents__ts8uK");
     private final SelenideElement logo = $(".Logo_desktop__IL1Zv");
     private final SelenideElement cartButton = $(".CartIcon_cart__8xX__");
-    private final SelenideElement buyButton = $(byText("Купить"));
+    private final SelenideElement buyButton = $("button.Button_button__uHbCf.Button_withText__7ypqP");
     private final SelenideElement loginButton = $(".ProfileIcon_profile__LXIkC");
     private final SelenideElement authModal = $(".AuthModal_authModal__nouL7");
     private final SelenideElement citySelector = $(".Region_text__Wm7FO");
@@ -97,6 +97,7 @@ public class MainPage {
         productCard.scrollTo();
         buyButton.shouldBe(visible);
         buyButton.click();
+        sleep(3000);
     }
 
     @Step("Открывает селектор города")
