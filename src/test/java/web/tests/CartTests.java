@@ -53,7 +53,7 @@ public class CartTests extends TestBase{
         cartPage.cartIsEmpty();
     }
 
-    //helper добавления товара в корзину и перехода к ней (в перспективе - через api)
+    //helper предусловий добавления товара в корзину и перехода к ней (в перспективе - через api)
     private void addProductToCart() {
         mainPage.verifyCartIsVisible();
         mainPage.openCitySelector();
