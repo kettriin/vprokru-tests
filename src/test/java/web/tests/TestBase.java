@@ -21,7 +21,7 @@ public class TestBase {
     static void setupSelenideConfig() {
         Configuration.remote = System.getProperty("farm_link");
         Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("version", "140.0");
+        Configuration.browserVersion = System.getProperty("version", "128.0");
         Configuration.browserSize = System.getProperty("resolution", "1920x1080");
         Configuration.baseUrl = "https://vprok.ru";
         Configuration.pageLoadStrategy = "eager";
