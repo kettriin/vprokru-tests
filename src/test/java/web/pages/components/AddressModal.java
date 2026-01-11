@@ -15,12 +15,13 @@ public class AddressModal {
     private final SelenideElement addressList = $(".Options_list__CoBea");
 
     final String noExpressAddress = "Тверь, улица Коминтерна, 65";
+    final String flatNumberValue = "12";
 
     @Step("Ввод минимального адреса")
     public void minAddressInput() {
         streetInput.setValue(noExpressAddress);
         addressList.click();
-        flatNumber.setValue("12");
+        flatNumber.setValue(flatNumberValue);
     }
 
     @Step("Подтверждение введённого адреса")
