@@ -1,0 +1,29 @@
+package mobile.config;
+
+import org.aeonbits.owner.Config;
+import org.aeonbits.owner.Config.Sources;
+
+@Sources({
+        "classpath:remote.properties"
+})
+
+public interface RemoteConfig extends Config {
+
+    @Key("browserstack.user")
+    String browserstackUser();
+
+    @Key("browserstack.key")
+    String browserstackKey();
+
+    @Key("app.name")
+    String appName();
+
+    @Key("device.name")
+    String deviceName();
+
+    @Key("android.version")
+    String androidVersion();
+
+    @Key("hub.url")
+    String hubUrl();
+}

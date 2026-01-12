@@ -1,6 +1,5 @@
 package web.tests;
 
-import web.data.Categories;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
@@ -9,9 +8,10 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.ValueSource;
+import web.data.CategoriesForWebTests;
 import web.pages.MainPage;
 
-public class MainPageTests extends TestBase{
+public class MainPageTests extends TestBase {
 
     MainPage mainPage = new MainPage();
 
@@ -47,12 +47,12 @@ public class MainPageTests extends TestBase{
     }
 
     @ParameterizedTest(name = "В каталоге присутствует категория {0}")
-    @EnumSource(value = Categories.class)
+    @EnumSource(value = CategoriesForWebTests.class)
     @Tags({
             @Tag("WEB"),
             @Tag("SMOKE")
     })
-    void mainCategoriesInCatalogAreDisplayed(Categories categories) {
+    void mainCategoriesInCatalogAreDisplayed(CategoriesForWebTests categories) {
         mainPage.waitForLoad();
         mainPage.openCatalog();
         mainPage.verifyCategoryInCatalog(categories);

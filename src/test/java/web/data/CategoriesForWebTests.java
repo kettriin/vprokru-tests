@@ -1,6 +1,6 @@
 package web.data;
 
-public enum Categories {
+public enum CategoriesForWebTests {
     FRUITS("Овощи, фрукты, ягоды"),
     DAIRY("Молоко, сыр, яйца"),
     MEAT("Мясо, птица, колбасы"),
@@ -9,7 +9,7 @@ public enum Categories {
 
     public final String categoryName;
 
-    Categories(String categoryName) {
+    CategoriesForWebTests(String categoryName) {
         this.categoryName = categoryName;
     }
 }

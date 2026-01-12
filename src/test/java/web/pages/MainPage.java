@@ -3,7 +3,7 @@ package web.pages;
 import com.codeborne.selenide.ClickOptions;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import web.data.Categories;
+import web.data.CategoriesForWebTests;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
@@ -57,7 +57,7 @@ public class MainPage {
     }
 
     @Step("Проверяет наличие категории в каталоге")
-    public void verifyCategoryInCatalog(Categories categories) {
+    public void verifyCategoryInCatalog(CategoriesForWebTests categories) {
         catalogMenu.shouldHave(text(categories.categoryName));
     }
 
