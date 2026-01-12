@@ -46,6 +46,12 @@ tasks.withType(Test) {
     }
 }
 
-test {
+tasks.register("web_tests", Test) {
     useJUnitPlatform()
+    systemProperty 'junit.jupiter.include.tags', 'WEB'
+}
+
+tasks.register("app_tests", Test) {
+    useJUnitPlatform()
+    systemProperty 'junit.jupiter.include.tags', 'APP'
 }

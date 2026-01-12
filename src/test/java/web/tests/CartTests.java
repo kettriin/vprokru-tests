@@ -22,6 +22,7 @@ public class CartTests extends TestBase{
 
     @DisplayName("При первом переходе на сайт корзина - пустая")
     @Test
+    @Tag("WEB")
     void cartIsEmptyByFirstVisitTest() {
         mainPage.verifyCartIsVisible();
         mainPage.openCart();
@@ -30,6 +31,7 @@ public class CartTests extends TestBase{
 
     @DisplayName("Добавленный товар отображается в ненулевом количестве")
     @Test
+    @Tag("WEB")
     void cartHasAddedItemsTest() {
         addProductToCart();
         cartPage.productAmountInCartIsNotEmpty();
@@ -37,6 +39,7 @@ public class CartTests extends TestBase{
 
     @DisplayName("Увеличение количества товаров в корзине с помощью каунтера")
     @Test
+    @Tag("WEB")
     void itemQuantityCounterTest() {
         addProductToCart();
         double initialValue = cartPage.parseCounterValue();
@@ -47,6 +50,7 @@ public class CartTests extends TestBase{
 
     @DisplayName("Удаление товара из корзины")
     @Test
+    @Tag("WEB")
     void itemRemoveFromCartTest() {
         addProductToCart();
         cartPage.removeProductButtonClick();
