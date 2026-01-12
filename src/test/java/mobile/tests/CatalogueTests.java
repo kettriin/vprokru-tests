@@ -17,7 +17,7 @@ public class CatalogueTests extends TestBase {
     @Tag("APP")
     void mainCategoriesInCatalogAreDisplayed(CategoriesForAppTests categoryName) {
         mainScreen.catalogOpen();
-        catalogScreen.mainCategoriesAreDisplayd(categoryName);
+        catalogScreen.checkCategoryIsDisplayed(categoryName);
     }
 
     @CsvSource({

@@ -66,7 +66,7 @@ public class CartTests extends TestBase{
         address.minAddressInput();
         address.approveAddress();
         mainPage.openCart();
-        sleep(3000);
+        sleep(5000);
         promo.closePromoModalIfPresent();
     }
 }
