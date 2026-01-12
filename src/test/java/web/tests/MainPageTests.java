@@ -11,6 +11,8 @@ import org.junit.jupiter.params.provider.ValueSource;
 import web.data.CategoriesForWebTests;
 import web.pages.MainPage;
 
+@DisplayName("Тесты на блоки и содержание главной страницы")
+@Tag("MAIN")
 public class MainPageTests extends TestBase {
 
     MainPage mainPage = new MainPage();
