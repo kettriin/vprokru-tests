@@ -12,7 +12,7 @@ import web.data.CategoriesForWebTests;
 import web.pages.MainPage;
 
 @DisplayName("Тесты на блоки и содержание главной страницы")
-@Tag("MAIN")
+@Tag("MAIN_WEB")
 public class MainPageTests extends TestBase {
 
     MainPage mainPage = new MainPage();

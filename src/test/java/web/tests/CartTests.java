@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("Тесты на взаимодействие с корзиной")
-@Tag("CART")
+@Tag("CART_WEB")
 public class CartTests extends TestBase{
 
     MainPage mainPage = new MainPage();
