@@ -1,13 +1,18 @@
 package mobile.tests;
 
+import mobile.data.CategoriesForAppTests;
 import mobile.screens.CatalogScreen;
 import mobile.screens.MainScreen;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.EnumSource;
-import mobile.data.CategoriesForAppTests;
 
+import static io.qameta.allure.Allure.step;
+
+@DisplayName("Тесты на работу каталога")
+@Tag("CAT_APP")
 public class CatalogueTests extends TestBase {
     MainScreen mainScreen = new MainScreen();
     CatalogScreen catalogScreen = new CatalogScreen();
@@ -15,9 +20,10 @@ public class CatalogueTests extends TestBase {
     @ParameterizedTest(name = "В каталоге присутствует категория {0}")
     @EnumSource(value = CategoriesForAppTests.class)
     @Tag("APP")
-    void mainCategoriesInCatalogAreDisplayed(CategoriesForAppTests categoryName) {
-        mainScreen.catalogOpen();
-        catalogScreen.checkCategoryIsDisplayed(categoryName);
+    void mainCategoriesInCatalogAreDisplayedTest(CategoriesForAppTests categoryName) {
+        step("Перейти в каталог", () -> mainScreen.catalogOpen());
+        step("В каталоге отображается плитка категории", () ->
+                catalogScreen.checkCategoryIsDisplayed(categoryName));
     }
 
     @CsvSource({
@@ -27,10 +33,11 @@ public class CatalogueTests extends TestBase {
     })
     @ParameterizedTest(name = "Категория {0} содержит подкатегорию \"Все товары категории\" ")
     @Tag("APP")
-    void categoriesHaveAllProductsSubcatgory(String categoryName, String subCategoryName) {
-        mainScreen.catalogOpen();
-        catalogScreen.goToCategory(categoryName);
-        catalogScreen.innerCategoryTitleHasText(subCategoryName);
+    void categoriesHaveAllProductsSubcatgoryTest(String categoryName, String subCategoryName) {
+        step("Перейти в каталог", () -> mainScreen.catalogOpen());
+        step("Перейти в категорию", () -> catalogScreen.goToCategory(categoryName));
+        step("Отобрадается заголовок подкатегории Все товары категории", () ->
+                catalogScreen.innerCategoryTitleHasText(subCategoryName));
     }
 
 }
