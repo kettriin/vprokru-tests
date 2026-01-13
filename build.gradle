@@ -65,6 +65,12 @@ task web_cart_tests(type: Test) {
     }
 }
 
+task app_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("MAIN_APP", "CART_APP", "CAT_APP")
+    }
+}
+
 task app_main_tests(type: Test) {
     useJUnitPlatform {
         includeTags("MAIN_APP")
