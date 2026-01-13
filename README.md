@@ -102,7 +102,7 @@
 
 #### MOBILE APP JENKINS
 <p align="center">
-<img src="media/screenshots/jenkins-vprokru-tests-app.png" alt="Allure report" width="1000" height="400">
+<img src="media/screenshots/jenkins-vprokru-tests-app.png" alt="Allure report" width="791" height="470">
 </p>
 
 ### Параметры сборки проекта
