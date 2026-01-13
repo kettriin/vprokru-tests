@@ -4,11 +4,10 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverProvider;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import mobile.driver.RemoteDriver;
-import mobile.driver.LocalDriver;
-import mobile.helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
-import mobile.screens.GettingStartedScreen;
+import mobile.driver.LocalDriver;
+import mobile.driver.RemoteDriver;
+import mobile.helpers.Attach;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,8 +16,6 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
-
-    GettingStartedScreen getStarted = new GettingStartedScreen();
 
     @BeforeAll
     static void setupSelenideConfig() {
@@ -34,7 +31,6 @@ public class TestBase {
     void addListenerAndOpen() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         open();
-        getStarted.dismissNotifications();
     }
 
     @AfterEach
@@ -48,7 +44,7 @@ public class TestBase {
     }
 
     static WebDriverProvider chooseMode() {
-        String testDeviceDriver = System.getProperty("dd", "LOCAL");
+        String testDeviceDriver = System.getProperty("dd", "REMOTE");
 
         return switch (testDeviceDriver) {
             case "REMOTE" -> new RemoteDriver();
