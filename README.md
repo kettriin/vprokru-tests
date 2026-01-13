@@ -116,13 +116,30 @@
 
 <a id="console"></a>
 ## 🚀 Команда для запуска
-
+#### WEB
 Удаленный запуск с использованием Jenkins и Selenoid (требуется логин и пароль):
 ```bash  
-./gradlew clean test -Denv=remote
+./gradlew clean web_tests
+-Denv=remoteweb
+-Dbrowser=${BROWSER}
+-Dversion=${VERSION}
+-Dresolution=${RESOLUTION}
+-Dfarm_link=https://user1:1234@${FARM_LINK}/wd/hub
 ```
 Локальный запуск
 ```bash  
-gradle clean test 
+gradle clean web_tests 
+```
+#### MOBILE APP
+Удаленный запуск с использованием BrowserStack (требуется логин и пароль):
+```bash  
+./gradlew clean app_tests
+-Ddd=REMOTE
+-Dbrowserstack.user=${BrowserstackUserName} - логин
+-Dbrowserstack.key=${BrowserstackPassword} - пароль
+```
+Локальный запуск
+```bash  
+gradle clean app_tests 
 ```
 ---
