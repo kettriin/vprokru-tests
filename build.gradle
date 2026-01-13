@@ -54,6 +54,6 @@ tasks.register("web_tests", Test) {
 
 tasks.register("app_tests", Test) {
     useJUnitPlatform {
-        includeTags("APP")
+        includeTags("APP", "CART_APP", "CAT_APP", "MAIN_APP")
     }
 }
