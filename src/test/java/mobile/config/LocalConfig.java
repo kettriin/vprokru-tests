@@ -3,7 +3,7 @@ package mobile.config;
 import org.aeonbits.owner.Config;
 import org.aeonbits.owner.Config.Sources;
 
-@Sources({"classpath:local.properties"})
+@Sources({"classpath:localapp.properties"})
 public interface LocalConfig extends Config {
 
     @Key("platform.name")

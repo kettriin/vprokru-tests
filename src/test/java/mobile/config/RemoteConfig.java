@@ -4,7 +4,7 @@ import org.aeonbits.owner.Config;
 import org.aeonbits.owner.Config.Sources;
 
 @Sources({
-        "classpath:remote.properties"
+        "classpath:remoteapp.properties"
 })
 
 public interface RemoteConfig extends Config {
