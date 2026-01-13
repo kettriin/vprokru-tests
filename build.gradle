@@ -48,7 +48,19 @@ tasks.withType(Test) {
 
 tasks.register("web_tests", Test) {
     useJUnitPlatform {
-        includeTags("MAIN_WEB", "CART_WEB")
+        includeTags("WEB")
+    }
+}
+
+tasks.register("web_main_tests", Test) {
+    useJUnitPlatform {
+        includeTags("MAIN_WEB")
+    }
+}
+
+tasks.register("web_cart_tests", Test) {
+    useJUnitPlatform {
+        includeTags("CART_WEB")
     }
 }
 
