@@ -19,7 +19,10 @@ public class MainPageTests extends TestBase {
 
     @Test
     @DisplayName("Логотип отображается и ведет на главную страницу при клике")
-    @Tag("WEB")
+    @Tags({
+            @Tag("WEB"),
+            @Tag("SMOKE")
+    })
     void logoIsVisibleAndClickable() {
         mainPage.waitForLoad();
         mainPage.verifyLogoIsVisibleAndClickable();
@@ -31,7 +34,10 @@ public class MainPageTests extends TestBase {
             "Зоотовары", "Детские товары", "Красота и здоровье", "О доставке"
     })
     @ParameterizedTest(name = "В шапке отображается информационный раздел {0}")
-    @Tag("WEB")
+    @Tags({
+            @Tag("WEB"),
+            @Tag("SMOKE")
+    })
     void infoBlocksAreVisibleInTheHeader(String infoBlockHeader) {
         mainPage.verifyInfoBlockIsVisible(infoBlockHeader);
     }
@@ -42,7 +48,10 @@ public class MainPageTests extends TestBase {
             "ВОДА , Вода"
     })
     @ParameterizedTest(name = "В поисковом запросе {0} отображается карточка товара {1}")
-    @Tag("WEB")
+    @Tags({
+            @Tag("WEB"),
+            @Tag("SMOKE")
+    })
     void searchQueryContainsProductCard(String searchQuery, String searchedProductName) {
         mainPage.searchForProduct(searchQuery);
         mainPage.verifyProductIsFound(searchedProductName);
