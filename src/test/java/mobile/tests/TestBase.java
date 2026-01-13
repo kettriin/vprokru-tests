@@ -8,7 +8,6 @@ import io.qameta.allure.selenide.AllureSelenide;
 import mobile.driver.LocalDriver;
 import mobile.driver.RemoteDriver;
 import mobile.helpers.Attach;
-import mobile.screens.GettingStartedScreen;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,8 +16,6 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
-
-    GettingStartedScreen gettingStartedScreen = new GettingStartedScreen();
 
     @BeforeAll
     static void setupSelenideConfig() {
@@ -34,7 +31,6 @@ public class TestBase {
     void addListenerAndOpen() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         open();
-        gettingStartedScreen.dismissNotifications();
     }
 
     @AfterEach
