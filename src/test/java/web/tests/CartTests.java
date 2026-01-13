@@ -9,6 +9,7 @@ import web.pages.components.AddressModal;
 import web.pages.components.PromoModal;
 
 import static com.codeborne.selenide.Selenide.sleep;
+import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("Тесты на взаимодействие с корзиной")
@@ -22,39 +23,38 @@ public class CartTests extends TestBase{
 
     @DisplayName("При первом переходе на сайт корзина - пустая")
     @Test
-    @Tag("WEB")
     void cartIsEmptyByFirstVisitTest() {
-        mainPage.verifyCartIsVisible();
-        mainPage.openCart();
-        cartPage.cartIsEmpty();
+        step("Иконка корзины отображается на главной", () -> mainPage.verifyCartIsVisible());
+        step("Перейти на вкладку коризны", () -> mainPage.openCart());
+        step("Корзина пуста", () -> cartPage.cartIsEmpty());
     }
 
     @DisplayName("Добавленный товар отображается в ненулевом количестве")
     @Test
-    @Tag("WEB")
     void cartHasAddedItemsTest() {
-        addProductToCart();
-        cartPage.productAmountInCartIsNotEmpty();
+        step("Добавить товар в корзину", () -> addProductToCart());
+        step("Для добавленного товара в корзине отображается его количество",
+                () -> cartPage.productAmountInCartIsNotEmpty());
     }
 
     @DisplayName("Увеличение количества товаров в корзине с помощью каунтера")
     @Test
-    @Tag("WEB")
     void itemQuantityCounterTest() {
-        addProductToCart();
+        step("Добавить товар в корзину", () -> addProductToCart());
         double initialValue = cartPage.parseCounterValue();
-        cartPage.incrementButtonClick();
+        step("Увеличить количество товара в корзине в 2 раза",
+                () -> cartPage.incrementButtonClick());
         double finalValue = cartPage.parseCounterValue();
-        assertThat(finalValue).isGreaterThanOrEqualTo(initialValue * 2);
+        step("Количество добавленного товара в корзине стало больше в 2 раза",
+                () -> assertThat(finalValue).isGreaterThanOrEqualTo(initialValue * 2));
     }
 
     @DisplayName("Удаление товара из корзины")
     @Test
-    @Tag("WEB")
     void itemRemoveFromCartTest() {
-        addProductToCart();
-        cartPage.removeProductButtonClick();
-        cartPage.cartIsEmpty();
+        step("Добавить товар в корзину", () -> addProductToCart());
+        step("Удалить товар из корзины по крестику", () -> cartPage.removeProductButtonClick());
+        step("Корзина пуста", () -> cartPage.cartIsEmpty());
     }
 
     //helper предусловий добавления товара в корзину и перехода к ней (в перспективе - через api)

@@ -46,26 +46,39 @@ tasks.withType(Test) {
     }
 }
 
-tasks.register("web_tests", Test) {
+
+task web_tests(type: Test) {
     useJUnitPlatform {
-        includeTags("WEB")
+        includeTags("MAIN_WEB", "CART_WEB")
     }
 }
 
-tasks.register("web_main_tests", Test) {
+task web_main_tests(type: Test) {
     useJUnitPlatform {
         includeTags("MAIN_WEB")
     }
 }
 
-tasks.register("web_cart_tests", Test) {
+task web_cart_tests(type: Test) {
     useJUnitPlatform {
         includeTags("CART_WEB")
     }
 }
 
-tasks.register("app_tests", Test) {
+task app_main_tests(type: Test) {
     useJUnitPlatform {
-        includeTags("APP")
+        includeTags("MAIN_APP")
+    }
+}
+
+task app_cart_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("CART_APP")
+    }
+}
+
+task app_cat_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("CAT_APP")
     }
 }

@@ -17,7 +17,6 @@ public class CartTests extends TestBase {
 
     @Test
     @DisplayName("Корзина пустая при первом запуске")
-    @Tag("APP")
     void firstStartEmptyCartTest() {
         step("Перейти на вкладку Корзинав нижнем навбаре", () -> navBar.goToCart());
         step("В корзине присутствует заголовок 'Корзина пуста'", () -> cartScreen.emptyCartHeader());

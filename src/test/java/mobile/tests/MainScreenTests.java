@@ -18,7 +18,6 @@ public class MainScreenTests extends TestBase {
             "Каталог", "Адрес", "Войти"
     })
     @ParameterizedTest(name = "На главном экране отображаются кнопки {0}")
-    @Tag("APP")
     void darkstoreButtonsAreDisplayedTest(String darkstoreButtonName) {
         step("На главной отображаются основные кнопки даркстора", () ->
                 mainScreen.darkstoreItemButtonDisplayed(darkstoreButtonName));

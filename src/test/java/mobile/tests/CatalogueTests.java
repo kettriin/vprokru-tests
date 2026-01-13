@@ -19,7 +19,6 @@ public class CatalogueTests extends TestBase {
 
     @ParameterizedTest(name = "В каталоге присутствует категория {0}")
     @EnumSource(value = CategoriesForAppTests.class)
-    @Tag("APP")
     void mainCategoriesInCatalogAreDisplayedTest(CategoriesForAppTests categoryName) {
         step("Перейти в каталог", () -> mainScreen.catalogOpen());
         step("В каталоге отображается плитка категории", () ->
@@ -32,7 +31,6 @@ public class CatalogueTests extends TestBase {
             "Красота и здоровье , Все товары категории"
     })
     @ParameterizedTest(name = "Категория {0} содержит подкатегорию \"Все товары категории\" ")
-    @Tag("APP")
     void categoriesHaveAllProductsSubcatgoryTest(String categoryName, String subCategoryName) {
         step("Перейти в каталог", () -> mainScreen.catalogOpen());
         step("Перейти в категорию", () -> catalogScreen.goToCategory(categoryName));
