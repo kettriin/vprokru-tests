@@ -157,6 +157,7 @@ gradle clean web_tests
 -Dbrowserstack.key=${BrowserstackPassword} - пароль
 ```
 Локальный запуск
+> Для локального запуска тестов требуются следующие установленные программы на компьютере: Appium Server, Appium и Android Studio
 ```bash  
 gradle clean app_tests 
 ```
@@ -179,24 +180,28 @@ flowchart LR
 
 После выполнения сборки, в блоке История сборок напротив номера сборки появится значок Allure Report, при клике на которые откроется страница со сформированным html-отчетом и тестовой документацией соответственно.
 
-## <img src="images/logo/Allure.svg" width="50" height="50"/> [Allure]() отчет
+## <img src="madia/logo/Allure.svg" width="50" height="50"/> [Allure WEB](https://jenkins.autotests.cloud/job/vprokru-tests-web/21/allure/) отчет и [Allure APP](https://jenkins.autotests.cloud/job/vprokru-tests-app/8/allure/#) отчет
 
 ### 🖨️ Главная страница отчета
-
+#### WEB
 <p align="center">
-<img src="" alt="Allure report" width="1000" height="400">
+<img src="media/screenshots/allure-results-web.png" alt="Allure report WEB" width="971" height="470">
+</p>
+
+#### APP
+<p align="center">
+<img src="media/screenshots/allure-results-app.png" alt="Allure report APP" width="971" height="470">
 </p>
 
 ### 📄 Тест-кейсы
-
+#### WEB
 <p align="center">
-<img src="" alt="Test Case" width="1000" height="400">
+<img src="media/screenshots/allure-tests-web.png" alt="Test Case WEB" width="971" height="470">
 </p>
 
-### 📊  Графики
-
+#### APP
 <p align="center">
-<img src="" width="1000" height="400">
+<img src="media/screenshots/allure-tests-app.png" alt="Test Case APP" width="971" height="470">
 </p>
 
 ---
@@ -227,7 +232,7 @@ flowchart LR
 
 
 <p align="center">
-<img src="media/screenshots/tlg.png" alt="TestOps launch" width="500" height="400">
+<img src="media/screenshots/tlg.png" alt="TestOps launch" width="400" height="400">
 </p>
 
 
@@ -241,8 +246,13 @@ flowchart LR
 - :heavy_check_mark: Ссылка на Allure отчет
 
 ---
-## <img src="images/logo/Selenoid.svg" width="50" height="50"/> Видео запуска тестов
-В отчетах Allure для каждого теста прикреплен не только скриншот, но и видео прохождения теста
+## Видео запуска WEB тестов
+В отчетах Allure для каждого WEB теста прикреплен не только скриншот, но и видео прохождения теста
 <p align="center">
-<img src="images/gifs/selenoid.gif" alt="TestOps launch" width="800" height="400">
+<img src="media/gif/vprok-remove-from-cart-test-video.gif" alt="TestOps launch" width="800" height="400">
+</p>
+
+## Видеопример выполнения APP теста
+<p align="center">
+<img src="media/gif/vprok-remove-from-cart-test-video.gif" alt="TestOps launch" width="800" height="400">
 </p>
