@@ -17,6 +17,7 @@ import static io.qameta.allure.Allure.step;
 public class MainPageTests extends TestBase {
 
     MainPage mainPage = new MainPage();
+    String mainPageUrl = "https://www.vprok.ru/";
 
     @Test
     @DisplayName("Логотип отображается и ведет на главную страницу при клике")
@@ -25,7 +26,7 @@ public class MainPageTests extends TestBase {
         step("Лого сайта отображается на главной", () -> mainPage.verifyLogoIsVisibleAndClickable());
         step("Клик по лого", () -> mainPage.clickLogo());
         step("Редирект на главную", () ->
-                mainPage.verifyCurrentUrl("https://www.vprok.ru/"));
+                mainPage.verifyCurrentUrl(mainPageUrl));
     }
 
     @ValueSource(strings = {
