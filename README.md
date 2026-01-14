@@ -11,7 +11,7 @@
 - [Тестовые сценарии](#-тестовые-сценарии)
 - [Сборка в Jenkins](#-сборка-в-jenkins)
 - [Команда для запуска](#-команда-для-запуска)
-- [Allure отчет](#-allure-отчет)
+- [Allure отчет](#-allure-web-отчет-и-allure-app-отчет)
 - [Интеграция с Allure TestOps](#-интеграция-с-allure-testops)
 - [Уведомления в Telegram](#-уведомления-в-telegram-чат-с-ботом)
 - [Пример запуска тестов](#-видео-запуска-тестов)
@@ -180,51 +180,51 @@ flowchart LR
 
 После выполнения сборки, в блоке История сборок напротив номера сборки появится значок Allure Report, при клике на которые откроется страница со сформированным html-отчетом и тестовой документацией соответственно.
 
-## <img src="madia/logo/Allure.svg" width="50" height="50"/> [Allure WEB](https://jenkins.autotests.cloud/job/vprokru-tests-web/21/allure/) отчет и [Allure APP](https://jenkins.autotests.cloud/job/vprokru-tests-app/8/allure/#) отчет
+## <img src="media/logo/Allure.svg" width="40" height="40"/> [Allure WEB](https://jenkins.autotests.cloud/job/vprokru-tests-web/21/allure/) отчет и [Allure APP](https://jenkins.autotests.cloud/job/vprokru-tests-app/8/allure/#) отчет
 
 ### 🖨️ Главная страница отчета
 #### WEB
 <p align="center">
-<img src="media/screenshots/allure-results-web.png" alt="Allure report WEB" width="971" height="470">
+<img src="media/screenshots/allure-results-web.png" alt="Allure report WEB" width="791" height="470">
 </p>
 
 #### APP
 <p align="center">
-<img src="media/screenshots/allure-results-app.png" alt="Allure report APP" width="971" height="470">
+<img src="media/screenshots/allure-results-app.png" alt="Allure report APP" width="791" height="470">
 </p>
 
 ### 📄 Тест-кейсы
 #### WEB
 <p align="center">
-<img src="media/screenshots/allure-tests-web.png" alt="Test Case WEB" width="971" height="470">
+<img src="media/screenshots/allure-tests-web.png" alt="Test Case WEB" width="791" height="470">
 </p>
 
 #### APP
 <p align="center">
-<img src="media/screenshots/allure-tests-app.png" alt="Test Case APP" width="971" height="470">
+<img src="media/screenshots/allure-tests-app.png" alt="Test Case APP" width="791" height="470">
 </p>
 
 ---
 
 <a id="allure"></a>
-## <img alt="Allure_TO" height="50" src="images/logo/Allure_TO.svg" width="50"/> </a>Интеграция с <a target="_blank" href="">Allure TestOps</a>
+## <img alt="Allure_TO" height="40" src="media/logo/Allure_TO.svg" width="40"/> </a>Интеграция с <a target="_blank" href="">Allure TestOps</a>
 На *Dashboard* в <code>Allure TestOps</code> видна статистика количества тестов: сколько из них добавлены и проходятся вручную, сколько автоматизированы. Новые тесты, а так же результаты прогона приходят по интеграции при каждом запуске сборки.
 
 ## 🖨️ Основная страница отчёта
 
 <p align="center">  
-<img title="Allure TestOps Dashboard" src="images/screenshots/Allure-testops.png" width="850">  
+<img title="Allure TestOps Dashboard" src="images/screenshots/Allure-testops.png" width="791">  
 </p>  
 
 ## 📄 Авто и Ручные тест-кейсы
 
 <p align="center">  
-<img title="Allure Tests" src="" width="850">  
+<img title="Allure Tests" src="" width="791">  
 </p>
 
 ---
 
-## <img src="images/logo/Telegram.svg" width="50" height="50"/> Уведомления в Telegram чат с ботом
+## <img src="media/logo/Telegram.svg" width="40" height="40"/> Уведомления в Telegram чат с ботом
 
 После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне тестов.
 
@@ -254,5 +254,5 @@ flowchart LR
 
 ## Видеопример выполнения APP теста
 <p align="center">
-<img src="media/gif/vprok-remove-from-cart-test-video.gif" alt="TestOps launch" width="800" height="400">
+<img src="media/gif/vprokru-app-tests-video.gif" alt="TestOps launch" width="300" height="600">
 </p>
