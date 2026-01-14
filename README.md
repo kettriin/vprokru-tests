@@ -207,19 +207,19 @@ flowchart LR
 ---
 
 <a id="allure"></a>
-## <img alt="Allure_TO" height="40" src="media/logo/Allure_TO.svg" width="40"/> </a>Интеграция с <a target="_blank" href="">Allure TestOps</a>
+## <img alt="Allure_TO" height="40" src="media/logo/Allure_TO.svg" width="40"/> </a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/5074/dashboards">Allure TestOps</a>
 На *Dashboard* в <code>Allure TestOps</code> видна статистика количества тестов: сколько из них добавлены и проходятся вручную, сколько автоматизированы. Новые тесты, а так же результаты прогона приходят по интеграции при каждом запуске сборки.
 
 ## 🖨️ Основная страница отчёта
 
 <p align="center">  
-<img title="Allure TestOps Dashboard" src="images/screenshots/Allure-testops.png" width="791">  
+<img title="Allure TestOps Dashboard" src="media/screenshots/test-ops-dash.png" width="791">  
 </p>  
 
 ## 📄 Авто и Ручные тест-кейсы
 
 <p align="center">  
-<img title="Allure Tests" src="" width="791">  
+<img title="Allure Tests" src="media/screenshots/test-ops-tests.png" width="791">  
 </p>
 
 ---
