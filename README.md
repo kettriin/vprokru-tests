@@ -249,10 +249,14 @@ flowchart LR
 ## Видео запуска WEB тестов
 В отчетах Allure для каждого WEB теста прикреплен не только скриншот, но и видео прохождения теста
 <p align="center">
-<img src="media/gif/vprok-remove-from-cart-test-video.gif" alt="TestOps launch" width="800" height="400">
+  <img src="media/gif/vprok-remove-from-cart-test-video (online-video-cutter.com)-gif.gif">
 </p>
 
 ## Видеопример выполнения APP теста
 <p align="center">
-<img src="media/gif/vprokru-app-tests-video.gif" alt="TestOps launch" width="300" height="600">
+<img src="media/gif/vprokru-app-tests-video-gif.gif" alt="TestOps launch" width="300" height="600">
 </p>
+
+## Контакты
+📧 [shchetinina_ekaterina@internet.ru](mailto:shchetinina_ekaterina@internet.ru)
+💬 @kettreen
