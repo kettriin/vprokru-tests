@@ -8,9 +8,10 @@ repositories {
 }
 
 allure {
-    version = "2.27.0"
+    report {
+        version.set("2.27.0")
+    }
     adapter {
-        aspectjWeaver.set(true)
         frameworks {
             junit5 {
                 adapterVersion.set("2.27.0")
