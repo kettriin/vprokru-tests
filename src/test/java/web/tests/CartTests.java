@@ -65,6 +65,7 @@ public class CartTests extends TestBase{
         mainPage.addProduct();
         address.minAddressInput();
         address.approveAddress();
+        mainPage.addProduct();
         mainPage.openCart();
         sleep(5000);
         promo.closePromoModalIfPresent();

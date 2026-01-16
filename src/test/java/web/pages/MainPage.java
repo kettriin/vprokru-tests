@@ -6,6 +6,8 @@ import com.codeborne.selenide.SelenideElement;
 import web.data.CategoriesForWebTests;
 import io.qameta.allure.Step;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -21,7 +23,7 @@ public class MainPage {
     private final SelenideElement catalogMenu = $(".FeatureCatalogNavigationDesktop_parents__ts8uK");
     private final SelenideElement logo = $(".Logo_desktop__IL1Zv");
     private final SelenideElement cartButton = $(".CartIcon_cart__8xX__");
-    private final SelenideElement buyButton = $("button.Button_button__uHbCf.Button_withText__7ypqP");
+    private final SelenideElement buyButton = $("div[data-test-buy-button]");
     private final SelenideElement loginButton = $(".ProfileIcon_profile__LXIkC");
     private final SelenideElement authModal = $(".AuthModal_authModal__nouL7");
     private final SelenideElement citySelector = $(".Region_text__Wm7FO");
@@ -94,8 +96,10 @@ public class MainPage {
 
     @Step("Добавить товар в корзину")
     public void addProduct() {
-        productCard.scrollTo();
-        buyButton.shouldBe(visible);
+
+        buyButton.shouldBe(visible, Duration.ofSeconds(10));
+        executeJavaScript("arguments[0].scrollIntoView({block: 'center', behavior: 'smooth'});", productCard);
+        sleep(500);
         buyButton.click();
         sleep(3000);
     }

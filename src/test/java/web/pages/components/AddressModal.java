@@ -14,8 +14,8 @@ public class AddressModal {
     private final SelenideElement submitButton = $(byText("Сохранить адрес"));
     private final SelenideElement addressList = $(".Options_list__CoBea");
 
-    final String noExpressAddress = "Москва, Матвеевская улица, 10к4";
-    final String flatNumberValue = "12";
+    final String noExpressAddress = "Тверь, 1-й проезд Льва Толстого, 13/41";
+    final String flatNumberValue = "41";
 
     @Step("Ввод минимального адреса")
     public void minAddressInput() {
