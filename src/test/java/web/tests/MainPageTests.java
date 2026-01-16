@@ -39,7 +39,7 @@ public class MainPageTests extends TestBase {
     }
 
     @CsvSource({
-            "хлеб , Хлеб",
+            "хлеб , Батон",
             "молоко 3 процента , Молоко ",
             "ВОДА , Вода"
     })
