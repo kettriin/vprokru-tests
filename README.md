@@ -1,4 +1,4 @@
-# 🛒 Проект по автоматизации тестирования для интернет-магазина Впрок (vprok.ru)
+# 🛒 Проект по автоматизации тестирования для интернет-магазина [Впрок](https://vprok.ru) (vprok.ru)
 
 <p align="center"><a href="https://vprok.ru"><img src="https://askatrade.ru/upload/iblock/bf7/wxalplepkcb82f9v81lqr17pgfglxtck.png" align="center" width="500" height="150"  alt="Java"/></a></p>
 
@@ -259,4 +259,4 @@ flowchart LR
 
 ## Контакты
 📧 [shchetinina_ekaterina@internet.ru](mailto:shchetinina_ekaterina@internet.ru)
-💬 @kettreen
+💬 [@kettreen](t.me/kettreen)
