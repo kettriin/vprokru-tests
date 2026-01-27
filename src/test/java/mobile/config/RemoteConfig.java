@@ -26,4 +26,8 @@ public interface RemoteConfig extends Config {
 
     @Key("hub.url")
     String hubUrl();
+
+    @Key("browserstack.api.url")
+    @DefaultValue("https://api.browserstack.com/app-automate")
+    String browserstackApiUrl();
 }

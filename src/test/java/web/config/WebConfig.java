@@ -24,6 +24,10 @@ public interface WebConfig extends Config{
     String getBrowserVersion();
 
     @Key("isRemote")
-    @DefaultValue("false")
+    @DefaultValue("true")
     Boolean isRemote();
+
+    @Key("remoteUrl")
+    @DefaultValue("https://user1:1234@ru.selenoid.autotests.cloud/wd/hub")
+    String getRemoteUrl();
 }

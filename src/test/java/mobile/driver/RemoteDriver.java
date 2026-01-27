@@ -20,17 +20,26 @@ public class RemoteDriver implements WebDriverProvider {
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
         MutableCapabilities caps = new MutableCapabilities();
 
-        caps.setCapability("browserstack.user", config.browserstackUser());
-        caps.setCapability("browserstack.key", config.browserstackKey());
+        caps.setCapability("platformName", "android");
+        caps.setCapability("appium:automationName", "UiAutomator2");
 
-        caps.setCapability("app", config.appName());
+        MutableCapabilities bstackOptions = new MutableCapabilities();
+        bstackOptions.setCapability("userName", config.browserstackUser());
+        bstackOptions.setCapability("accessKey", config.browserstackKey());
+        bstackOptions.setCapability("projectName", "Vprok.ru Tests");
+        bstackOptions.setCapability("buildName", "Automated Tests");
+        bstackOptions.setCapability("sessionName", "Mobile App Test");
 
-        caps.setCapability("deviceName", config.deviceName());
-        caps.setCapability("platformVersion", config.androidVersion());
+        caps.setCapability("bstack:options", bstackOptions);
+
+        caps.setCapability("appium:app", config.appName());
+        caps.setCapability("appium:deviceName", config.deviceName());
+        caps.setCapability("appium:platformVersion", config.androidVersion());
+        caps.setCapability("appium:autoGrantPermissions", true);
+        caps.setCapability("appium:noReset", false);
 
         try {
-            return new RemoteWebDriver(
-                    new URL(config.hubUrl()), caps);
+            return new RemoteWebDriver(new URL(config.hubUrl()), caps);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

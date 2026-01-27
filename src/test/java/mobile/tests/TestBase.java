@@ -43,12 +43,12 @@ public class TestBase {
         System.out.println("Session ID: " + sessionId);
 
         Attach.pageSource();
-        closeWebDriver();
         Attach.addVideo(sessionId);
+        closeWebDriver();
     }
 
     static WebDriverProvider chooseMode() {
-        String testDeviceDriver = System.getProperty("dd", "LOCAL");
+        String testDeviceDriver = System.getProperty("environment", "LOCAL");
 
         return switch (testDeviceDriver) {
             case "REMOTE" -> new RemoteDriver();

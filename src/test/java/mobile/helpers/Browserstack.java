@@ -1,12 +1,20 @@
 package mobile.helpers;
 
+import mobile.config.RemoteConfig;
+import org.aeonbits.owner.ConfigFactory;
+
 import static io.restassured.RestAssured.given;
 
 
 public class Browserstack {
 
+    private static final RemoteConfig config = ConfigFactory.create(RemoteConfig.class);
+
     public static String videoUrl(String sessionId) {
-        String url = String.format("https://api.browserstack.com/app-automate/sessions/%s.json", sessionId);
+        String apiBaseUrl = config.browserstackApiUrl();
+
+        String url = String.format("%s/sessions/%s.json", apiBaseUrl, sessionId);
+
         String user = System.getProperty("browserstack.user");
         String key = System.getProperty("browserstack.key");
         if (user == null || key == null) {

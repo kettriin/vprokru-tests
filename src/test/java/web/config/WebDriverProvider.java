@@ -20,7 +20,7 @@ public class WebDriverProvider {
         Configuration.pageLoadStrategy = "eager";
 
         if (config.isRemote()) {
-            Configuration.remote = System.getProperty("farm_link");
+            Configuration.remote = System.getProperty("farm_link", config.getRemoteUrl());
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.of(
